@@ -22,14 +22,14 @@ create table mahasiswa_adzik.telepon (
 NIM char(4),
 NoTelepon varchar(14),
 keterangan varchar (10),
-primary key (NIM,NoTelepon), #cara penulisan primary key bisa spt ini atau spt diatas
+primary key (NIM,NoTelepon), 
 foreign key (NIM) references mahasiswa_adzik.mahasiswa_adzik (NIM)
 );
 
 #basic operation in relation database
 
 create table mahasiswa_adzik.users (
-user_id int auto_increment primary key, #user_id langsung isi angka karena sudah dikasih autoincremnet
+user_id int auto_increment primary key, 
 username varchar (20),
 create_date DATE
 ) auto_increment = 1; #mulai dari 1
@@ -40,7 +40,7 @@ after username;
 
 insert into mahasiswa_adzik.users
 values
-(NULL,'test01','test01@gmail.com','2021-10-10'), #null karena sudah auto increment
+(NULL,'test01','test01@gmail.com','2021-10-10'), 
 (NULL,'test02','test02@gmail.com','2021-10-11'),
 (NULL,'test03','test03@gmail.com','2021-10-12')
 ;
@@ -55,11 +55,11 @@ select last_insert_id(); #untuk mengetahui id terakhir yang diinsert
 insert into mahasiswa_adzik.users #perintah insert data tapi gak harus urut dan bisa lebih spesifik
 set
 create_date = NOW(),
-username = 'lusi',
-email = 'lusi@gmail.com'
+username = 'ita',
+email = 'ita@gmail.com'
 ;
 
-select NOW(); #melihatkan waktu saat ini
+select NOW(); 
 
 update mahasiswa_adzik.users set
 email = 'shofa@gmail.com',
@@ -144,7 +144,7 @@ order by count_states desc
 ;
 
 alter table country_adzik.states
-modify join_year char(10); #mengubah data type
+modify join_year char(10); 
 
 select count(*) from country_adzik.states;
 
